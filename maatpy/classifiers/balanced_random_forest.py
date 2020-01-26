@@ -146,7 +146,7 @@ class BalancedRandomForestClassifier(RandomForestClassifier):
                              " got {0} instead".format(self.class_weight))
 
         self.rus = RandomUnderSampler(sampling_strategy=self.ratio, replacement=self.replacement,
-                                      return_indices=True, random_state=self.random_state)
+                                      sample_indices=True, random_state=self.random_state)
         self.base_estimator_ = base_estimator
 
     def fit(self, X, y, sample_weight=None):
